@@ -14,4 +14,18 @@ class ApplicationController < ActionController::Base
             "error": "goodbye world!"
         }
     end
+
+    
+    def tema1
+        html_response = "HTML TEXT"
+        json_response = { message: 'JSON TEXT' }
+    
+        respond_to do |format|
+          format.html { render html: html_response }
+          format.json { render json: json_response }
+        end
+      end
+
+
+   
 end

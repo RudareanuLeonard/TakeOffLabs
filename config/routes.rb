@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   get 'goodbye', to: 'application#goodbye'
   get 'extra', to: 'application#extra'
+ 
+  get 'tema1', to: 'application#tema1'
 
 end
