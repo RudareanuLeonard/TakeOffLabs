@@ -1,0 +1,39 @@
+<div class="wrapper">
+        <div class="logo">
+            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/online-shopping-website-logo-social-media-design-template-7c68f89c80b29e89312c5672e209721c_screen.jpg?ts=1589638076" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+            MyShopName
+        </div>
+
+        <div class="p-3 mt-3"><!--FORM-->
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <%# <input type="text" name="userName" id="userName" placeholder="Username"> %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "Email..."%>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <%= f.password_field :password, autocomplete: "current-password", class: "form-control mb-4", placeholder: "Password..." %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+                        <div class="form-check">
+                          <%= f.check_box :remember_me, class: "form-check-input"%>
+                          <%= f.label :remember_me, class: "form-check-label" %>
+                        </div>
+            <% end %>
+
+            <%# <button class="btn mt-3">Login</button> %>
+            <%= f.submit "Log in", class:"btn btn-primary btn-block mb-4 mt-3" %>
+
+            <% end %>
+
+            <%= render "devise/shared/links" %>
+
+        </div>
+        <%# <div class="text-center fs-6">
+            <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+        </div> %>
+    </div>

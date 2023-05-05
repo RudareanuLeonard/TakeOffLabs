@@ -11,6 +11,17 @@
   </head>
 
   <body>
+  
+    <% if user_devise_signed_in? %>
+  <!-- This partial will only be displayed if the user is signed in -->
+        <%= render 'layouts/navbar_after_log_in'%>
+    <% else %>
+  <!-- This partial will only be displayed if the user is not signed in -->
+      <%= render 'layouts/navbar_before_log_in'%>
+<% end %>
+
+ 
     <%= yield %>
+
   </body>
 </html>
